@@ -151,9 +151,7 @@ Expected Gain = Σ(Lots applied in category / Subscription rate × (GMP + Discou
 - Expected returns (₹ and %)
 
 #### 2.6 Export Options
-- CSV export
 - Excel export
-- PDF report
 - Shareable image format
 
 ### 3. Allocation Optimizer
@@ -162,7 +160,7 @@ Expected Gain = Σ(Lots applied in category / Subscription rate × (GMP + Discou
 
 #### 3.1 Input Parameters
 - **Available Capital**: Total amount available (₹)
-- **Strategy Preference**: 
+- **Strategy Preference**:
   - GMP-based (highest GMP first)
   - Subscription-based (lowest subscription first)
   - Capital utilization (maximize number of applications)
@@ -221,47 +219,47 @@ interface IPO {
   symbol?: string;
   series: 'EQ' | 'SME';
   exchange: 'NSE' | 'BSE' | 'BOTH';
-  
+
   // Pricing
   lowerPriceBand: number;
   upperPriceBand: number;
   cutoffPrice?: number;
   lotSize: number;
-  
+
   // Dates
   openDate: Date;
   closeDate: Date;
   boaDate?: Date;
   listingDate?: Date;
-  
+
   // Issue Details
   issueSize: number; // in crores
   freshIssue?: number;
   offerForSale?: number;
-  
+
   // Market Data
   gmp?: number;
   gmpUpdated?: Date;
   subscriptionData?: SubscriptionData[];
-  
+
   // Special Categories
   hasShareholderQuota: boolean;
   shareholderDiscount?: number;
   hasEmployeeQuota: boolean;
   employeeDiscount?: number;
-  
+
   // Status
   status: 'UPCOMING' | 'OPEN' | 'CLOSED' | 'LISTED' | 'WITHDRAWN';
-  
+
   // Documents
   drhpUrl?: string;
   rhpUrl?: string;
   prospectusUrl?: string;
-  
+
   // Listing Performance
   listingPrice?: number;
   currentPrice?: number;
-  
+
   createdAt: Date;
   updatedAt: Date;
 }
@@ -298,17 +296,17 @@ interface UserCalculation {
   id: string;
   userId: string;
   type: 'FUNDING' | 'ALLOCATION';
-  
+
   // Input Parameters
   selectedIPOs: string[];
   applicationDetails: ApplicationDetail[];
   fundingParameters: FundingParameters;
-  
+
   // Results
   totalCapitalRequired: number;
   totalInterestCost: number;
   expectedReturns: number;
-  
+
   createdAt: Date;
   name?: string; // User-defined name for saving
 }
@@ -573,6 +571,6 @@ The modular architecture and clear separation of concerns will facilitate easy e
 
 ---
 
-**Document Version**: 1.0  
-**Last Updated**: July 20, 2025  
+**Document Version**: 1.0
+**Last Updated**: July 20, 2025
 **Next Review**: Phase 1 Development Completion
